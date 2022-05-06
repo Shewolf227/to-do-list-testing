@@ -67,3 +67,16 @@ describe('Update Task completion status', () => {
     expect(Test.checkTask(0, true)).toBeFalsy();
   });
 });
+
+// Removing completed tasks
+describe('clear all completed tasks', () => {
+
+  test("Test case 17", () => {
+    const Test = new ToDoList(true);
+    Test.addTaskToList("TaskTest_1 of Example 1");
+    Test.addTaskToList("TaskTest_1 of Example-2");
+
+    Test.checkTask(0, true);
+    expect(Test.clearAllChecked()).toBeTruthy();
+  });
+});
