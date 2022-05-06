@@ -1,5 +1,5 @@
 class ToDoList {
-    constructor(isTest = false) {
+  constructor(isTest = false) {
     this.addTask = document.querySelector('.add-task');
     this.taskList = document.querySelector('.todo-list');
     this.todoList = [];
@@ -199,6 +199,7 @@ class ToDoList {
     return this.todoList;
   }
 
+  // load from LS
   onLoadList = () => {
     if (this.testMode === false) {
       if (localStorage.getItem(this.localStorageInstance) != null) {
@@ -208,6 +209,6 @@ class ToDoList {
 
     return this.todoList;
   }
-  }
-  
-  export default ToDoList;
+}
+
+export default ToDoList;
