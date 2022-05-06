@@ -33,3 +33,49 @@ describe('Delete a task from the list', () => {
     expect(list).toHaveLength(3);
   });
 });
+
+// Editing task
+
+describe('Edit Task Description', () => {
+  test('Test case 1', () => {
+    document.body.innerHTML = '<div><ul class="todo-list"></ul></div>';
+
+    const Test = new ToDoList(true);
+    Test.addTaskToList('task to edit');
+    Test.addTaskToList('task saved');
+    const newDescription = 'This task value has changed';
+    expect(Test.editTaskList(0, newDescription)).toEqual(newDescription);
+  });
+});
+
+// Updating completion status
+
+describe('Update Task completion status', () => {
+  test('Test case 1', () => {
+    document.body.innerHTML = '<div><ul class="todo-list"></ul></div>';
+
+    const Test = new ToDoList(true);
+    Test.addTaskToList('task to edit');
+    expect(Test.checkTask(0, false)).toBeTruthy();
+  });
+
+  test('Test case 2', () => {
+    document.body.innerHTML = '<div><ul class="todo-list"></ul></div>';
+
+    const Test = new ToDoList(true);
+    Test.addTaskToList('task to edit');
+    expect(Test.checkTask(0, true)).toBeFalsy();
+  });
+});
+
+// Removing completed tasks
+describe('clear all completed tasks', () => {
+  test('Test case 17', () => {
+    const Test = new ToDoList(true);
+    Test.addTaskToList('TaskTest_1 of Example 1');
+    Test.addTaskToList('TaskTest_1 of Example-2');
+
+    Test.checkTask(0, true);
+    expect(Test.clearAllChecked()).toBeTruthy();
+  });
+});
