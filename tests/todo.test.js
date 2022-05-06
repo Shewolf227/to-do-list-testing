@@ -1,5 +1,7 @@
 import ToDoList from '../modules/todo.js';
 
+//Adding Test
+
 describe('Add to task list', () => {
   test('Testcase one', () => {
     document.body.innerHTML = '<div><ul class="todo-list"></ul></div>';
@@ -12,6 +14,8 @@ describe('Add to task list', () => {
     expect(list).toHaveLength(2);
   });
 });
+
+//Removing Test
 
 describe('Delete a task from the list', () => {
   test('Test case 1', () => {
