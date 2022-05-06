@@ -33,3 +33,37 @@ describe('Delete a task from the list', () => {
     expect(list).toHaveLength(3);
   });
 });
+
+// Editing task
+
+describe('Edit Task Description', () => {
+  test('Test case 1', () => {
+    document.body.innerHTML = '<div><ul class="todo-list"></ul></div>';
+
+    const Test = new ToDoList(true);
+    Test.addTaskToList('task to edit');
+    Test.addTaskToList('task saved');
+    const newDescription = "This particular value has changed";
+    expect(Test.editTaskList(0, newDescription)).toEqual(newDescription);
+  });
+});
+
+// Updating completion status
+
+describe('Update Task completion status', () => {
+  test('Test case 1', () => {
+    document.body.innerHTML = '<div><ul class="todo-list"></ul></div>';
+
+    const Test = new ToDoList(true);
+    Test.addTaskToList('task to edit');
+    expect(Test.checkTask(0, false)).toBeTruthy();
+  });
+
+  test('Test case 2', () => {
+    document.body.innerHTML = '<div><ul class="todo-list"></ul></div>';
+
+    const Test = new ToDoList(true);
+    Test.addTaskToList('task to edit');
+    expect(Test.checkTask(0, true)).toBeFalsy();
+  });
+});
