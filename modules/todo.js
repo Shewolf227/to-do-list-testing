@@ -199,6 +199,7 @@ class ToDoList {
     return this.todoList;
   }
 
+
   // load from LS
   onLoadList = () => {
     if (this.testMode === false) {
@@ -209,6 +210,8 @@ class ToDoList {
 
     return this.todoList;
   }
+
 }
 
-export default ToDoList;
+  export default ToDoList;
+
