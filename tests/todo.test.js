@@ -43,7 +43,7 @@ describe('Edit Task Description', () => {
     const Test = new ToDoList(true);
     Test.addTaskToList('task to edit');
     Test.addTaskToList('task saved');
-    const newDescription = "This particular value has changed";
+    const newDescription = 'This task value has changed';
     expect(Test.editTaskList(0, newDescription)).toEqual(newDescription);
   });
 });
