@@ -70,11 +70,10 @@ describe('Update Task completion status', () => {
 
 // Removing completed tasks
 describe('clear all completed tasks', () => {
-
-  test("Test case 17", () => {
+  test('Test case 17', () => {
     const Test = new ToDoList(true);
-    Test.addTaskToList("TaskTest_1 of Example 1");
-    Test.addTaskToList("TaskTest_1 of Example-2");
+    Test.addTaskToList('TaskTest_1 of Example 1');
+    Test.addTaskToList('TaskTest_1 of Example-2');
 
     Test.checkTask(0, true);
     expect(Test.clearAllChecked()).toBeTruthy();
